@@ -19,9 +19,8 @@ public class Sub {
 		int[][][] stu_dap = new int[3][n][10];
 	
 		// 3 kinds of state: int[][]
-		int[][] stu_ox = new int[3][n]; // CUMSUM
+		int[][] stu_score = new int[3][n]; // CUMSUM
 		
-		int o = 0;	// 정답 갯수
 		String Jul = "─────────────────────────────────────────";
 		
 		// 과목별 정답지
@@ -63,18 +62,18 @@ public class Sub {
 			System.out.printf("\n %s\n", Jul);
 			System.out.printf(" 학생%d \n", k+1);
 			for(int i = 0; i < 3; i++) {
-				o = 0; 	// 맞은 개수 초기화
+				int currentScore = 0;	// 현재 점수
 				System.out.printf(" 과목1 ");
 				for(int j = 0; j < 10; j++) {
 					if(sub_dap[i][j] == stu_dap[i][k][j]) {
-						o++;
+						currentScore += 10; // 누적합.(누산 +=, -=, ...)
 						System.out.print(" O ");
 					} else {
 						System.out.print(" X ");
 					}
-					stu_ox[i][k] = o * 10;
+					stu_score[i][k] = currentScore;
 				}
-				System.out.printf(" %3d점 ", stu_ox[i][k]);
+				System.out.printf(" %3d점 ", stu_score[i][k]);
 			}// for(i): i as subject index
 
 		} // 학생 N명 for
@@ -84,7 +83,7 @@ public class Sub {
 		System.out.printf(" %s\n", Jul);
 		
 		for(int k = 0; k < n; k++) {
-			System.out.printf(" 학생%d %3d   %3d   %3d\n", k+1, stu_ox[k][0], stu_ox[k][1], stu_ox[k][2]);
+			System.out.printf(" 학생%d %3d   %3d   %3d\n", k+1, stu_score[k][0], stu_score[k][1], stu_score[k][2]);
 		}
 		
 		System.out.printf(" %s\n", Jul);
