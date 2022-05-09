@@ -13,12 +13,16 @@ public class Sub {
 		n = sc.nextInt(); // 첫 대입 값이 고정됨(C언어와 달리 선언 동시에 초기화하지 않아도 됨.)
 		
 		// Subject Answers
+		// [과목인덱스][]
+		// [][문제별인덱스]
 		int[][] sub_dap = new int[3][10]; // 0 initialized(0d, '\0', false, ...)
 		
 		// Student Answers
+		// [과목인덱스][학생인덱스][문제인덱스]
 		int[][][] stu_dap = new int[3][n][10];
 	
 		// 3 kinds of state: int[][]
+		// [과목인덱스][학생인덱스]
 		int[][] stu_score = new int[3][n]; // CUMSUM
 		
 		String Jul = "─────────────────────────────────────────";
