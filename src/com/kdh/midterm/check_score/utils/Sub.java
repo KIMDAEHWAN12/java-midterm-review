@@ -7,36 +7,22 @@ public class Sub {
 	public void t_kor_check() {
 		
 		Scanner sc = new Scanner(System.in);
-		int n = 0;
+		final int n; // const 상수
 		
 		System.out.print("학생 수 : ");
-		n = sc.nextInt();
+		n = sc.nextInt(); // 첫 대입 값이 고정됨(C언어와 달리 선언 동시에 초기화하지 않아도 됨.)
 		
-		int[] sub_dap1 = new int[10];	
-		int[] sub_dap2 = new int[10];
-		int[] sub_dap3 = new int[10];
+		// Subject Answers
+		int[][] sub_dap = new int[3][10]; // 0 initialized(0d, '\0', false, ...)
 		
-		int[] stu_dap1 = new int[10];
-		int[] stu_dap2 = new int[10];
-		int[] stu_dap3 = new int[10];
+		// Student Answers
+		int[][] stu_dap = new int[3][10];
 	
-		
-		int[] stu_ox1 = new int[n]; 	// 과목1 점수 모음
-		int[] stu_ox2 = new int[n];
-		int[] stu_ox3 = new int[n];
+		// 3 kinds of state: int[][]
+		int[][] stu_ox = new int[3][n]; // CUMSUM
 		
 		int o = 0;	// 정답 갯수
 		String Jul = "─────────────────────────────────────────";
-		
-		// 배열 초기화
-		for (int i=0;i<10;i++){
-			sub_dap1[i] = 0;
-			sub_dap2[i] = 0;
-			sub_dap3[i] = 0;
-			stu_dap1[i] = 0;
-			stu_dap2[i] = 0;
-			stu_dap3[i] = 0;
-		}
 		
 		// 과목1 정답지
 		System.out.printf("\n %s \n", Jul);
