@@ -7,7 +7,6 @@ public class Sub {
 	public void t_kor_check() {
 		
 		Scanner sc = new Scanner(System.in);
-		
 		int n = 0;
 		
 		System.out.print("ÇÐ»ý ¼ö : ");

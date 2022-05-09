@@ -34,11 +34,15 @@ public class Main {
 			// nextInt(), nextLine()
 			
 			// Select
+			// 	자바는 컴파일 언어(인터프리팅도 함.)
+			// 		-> 스위치 케이스 유리한 면.
+			// 	이프나 엘스이프 구조는 무조건 위에서부터 조건식 전부 검토해서 진행.
+			// 	케이스가 다섯 개(아마) 이상이면 한 번에 점프한다.
 			switch(sel) {
-			case 1:
+			case 1: // if(sel == 1)
 				s.t_kor_check();
 				break;
-			case 2:
+			case 2: // else if(sel == 2)
 				p.t_pro();
 				break;
 			case 3:
@@ -51,7 +55,7 @@ public class Main {
 				// // Method 1:
 				// System.exit(0);
 				break mainloop; // label
-			default:
+			default: // else { ... }
 				continue mainloop;
 			}
 		} // while문
