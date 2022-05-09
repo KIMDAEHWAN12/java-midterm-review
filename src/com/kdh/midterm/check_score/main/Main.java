@@ -1,29 +1,32 @@
 // 중간고사
 
-package J0509;
+package com.kdh.midterm.check_score.main;
 import java.util.Scanner;
+
+import com.kdh.midterm.check_score.utils.Hap;
+import com.kdh.midterm.check_score.utils.Pro;
+import com.kdh.midterm.check_score.utils.Sub;
 
 public class Main {
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		String Jul = "─────────────────────────────────────────";
+		final String JUL = "─────────────────────────────────────────";
 
 		String ch = ""; 	// while 문 선택
 		
-		// Main m = new Main();
-		sub s = new sub();
-		pro p = new pro();
-		hap h = new hap();
+		Sub s = new Sub();
+		Pro p = new Pro();
+		Hap h = new Hap();
 		
 		while(true) {
-			System.out.printf("\n %s \n", Jul);
+			System.out.printf("\n %s \n", JUL);
 			System.out.println("  1 : 채점");
 			System.out.println("  2 : 성적처리");
 			System.out.println("  3 : 구간 합 구하기");
 			System.out.println("  4 : 소감");
 			System.out.println("  5 : 종 료");
-			System.out.printf(" %s \n", Jul);
+			System.out.printf(" %s \n", JUL);
 			
 			System.out.printf("  입력 : ");
 			ch = sc.next();			// ────────────────── 문자 넣기
