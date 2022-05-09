@@ -24,31 +24,25 @@ public class Sub {
 		int o = 0;	// 정답 갯수
 		String Jul = "─────────────────────────────────────────";
 		
-		// 과목1 정답지
+		// 과목별 정답지
 		System.out.printf("\n %s \n", Jul);
-		System.out.print(" 과목1 ");
-		for(int i=0;i<10;i++) {
-			// 과목1 정답 랜덤 생성
-			sub_dap1[i] = (int)(Math.random()*4+1);
-			System.out.printf("%2d ", sub_dap1[i]);
+		// Array Dim ==> For 중첩 수
+		// 2차원 배열 ==> 2중 for문을 쓰는 경우가 많다.
+		for(int i = 0;i < 3; i++) {
+			// sprintf => String.format("", ...)
+			// printf => System.out.printf("", ...) 
+			System.out.printf(" 과목 %d ", i + 1);
+			for(int j = 0; j < 10; j++) {
+				/*
+				 * Math.random() -> 0(inclusive)~1(exclusive) 0 이상 1 미만
+				 * Math.random() * 4 -> 0 이상 4 미만
+				 * 거기에 + 1 -> 1 이상 5 미만(1~4.999...)
+				 * (int)(그 값)으로 형 변환(캐스팅) -> 1, 2, 3, 4 중에 나옴.
+				 */
+				sub_dap[i][j] = (int)(Math.random()*4+1);
+				System.out.printf("%2d ", sub_dap[i][j]);
+			}
 		}
-		// 과목2 정답지
-		System.out.print("\n 과목2 ");
-		for(int i=0;i<10;i++) {
-			// 과목2 정답 랜덤 생성
-			sub_dap2[i] = (int)(Math.random()*4+1);
-			System.out.printf("%2d ", sub_dap2[i]);
-		}	
-		// 과목3 정답지
-	
-		System.out.print("\n 과목3 ");
-		for(int i=0;i<10;i++) {
-			// 과목3 정답 랜덤 생성
-			sub_dap3[i] = (int)(Math.random()*4+1);
-			System.out.printf("%2d ", sub_dap3[i]);
-		}
-		
-		
 		
 		System.out.printf("\n %s\n", Jul);
 		// 학생 N명
